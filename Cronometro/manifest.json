@@ -1,0 +1,24 @@
+{
+
+    "manifest_version": 2,
+    "name": "Cronometro",
+    "version": "1.0",
+  
+    "applications": {
+      "gecko": {
+        "id": "jefte199@gmail.com"
+      }
+    },
+  
+    "permissions": [
+      "http://*/*",
+      "https://*/*"
+    ],  
+  
+    "browser_action": {
+      "default_icon": "button/time.png",
+      "default_title": "Cronometro",
+      "default_popup": "popup/index.html"
+    }
+      
+}

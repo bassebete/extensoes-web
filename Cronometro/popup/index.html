@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cronometro</title>
+
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="index.css" />
+
+</head>
+
+<body>
+
+  <script defer src="./scripts/clock.js"></script>
+  <canvas id="Myclock" width="200" height="200"></canvas>
+
+  <div>
+    <!--- div for Time --->
+
+    <div class="clock">
+      <div id="myCrono">
+      </div>
+
+      <div id="myMilli">
+      </div>
+
+    </div>
+
+    <button onclick="init()">Start</button>
+    <button onclick="stop()">Stop</button>
+
+    <script>
+      let refreshIntervalId = null;
+      let refreshMilliId = null;
+
+      function SetTime() {
+        try {
+          var d = new Date();
+          refreshIntervalId = d.toLocaleTimeString();
+          document.getElementById("myCrono").innerHTML = refreshIntervalId;
+        } catch (error) {
+          refreshIntervalId = "ERROR: "+error;
+          document.getElementById("myCrono").innerHTML = refreshIntervalId;
+        }
+      }
+
+      function SetMilli(){
+        try {
+          var d = new Date();
+          refreshMilliId = d.getMilliseconds();
+          document.getElementById("myMilli").innerHTML = refreshMilliId;
+        } catch (error) {
+          refreshMilliId = "ERROR: "+error;
+          document.getElementById("myMilli").innerHTML = refreshMilliId;
+        }
+
+      }
+      function init() {
+        refreshIntervalId = setInterval(SetTime, 1000);
+        refreshMilliId = setInterval(SetMilli, 1);
+      }
+
+      function stop() {
+        clearInterval(SetTime);
+        clearInterval(SetMilli);
+      }  
+    </script>
+
+    <form action="kronos.html">
+      <button id="button">Contegem regresiva</button>
+    </form>
+
+</body>
+
+</html>

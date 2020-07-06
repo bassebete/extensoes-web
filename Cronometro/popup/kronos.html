@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cronometro</title>
+
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="index.css" />
+
+</head>
+
+<body>
+
+  <script defer src="./scripts/clock.js"></script>
+  <canvas id="Myclock" width="200" height="200"></canvas>
+
+  <div>
+    <div>
+      <label id="string-label">Contagem Regressiva:</label>
+    </div>
+    <input type="number" id="hour" />
+    <input type="number" id="minute" />
+    <input type="number" id="second" />
+    <div>
+      <label id="time-hour">hour</label>
+      <label id="time-minute">minute</label>
+      <label id="time-second">second</label>
+    </div>
+  </div>
+
+  <button id="button" onclick="init()">Lembre-me</button>
+  <div>
+    <span id="lbl-time" class="colored digit text-nowrap font-digit" style="font-size: 74px;">01:07</span>
+    <span id="lbl-msec" class="colored digit text-nowrap font-digit"
+      style="font-size: 30px; position: relative; top: -4%;">&nbsp;.17</span>
+  </div>
+
+  <button id="button" onclick="init()">Cronometro</button>
+
+  <script src="./scripts/alert.js"></script>
+
+</body>
+
+</html>
